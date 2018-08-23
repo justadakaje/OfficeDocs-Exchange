@@ -32,7 +32,7 @@ Here's how Safety Net is improved from the transport dumpster in Exchange 2010:
     
 - **Safety Net itself isn't a single point of failure**: Redundancy is provided by using a *Primary Safety Net* and a *Shadow Safety Net*. If the Primary Safety Net is unavailable for more than 12 hours, resubmit requests become shadow resubmit requests, and messages are re-delivered from the Shadow Safety Net.
     
-- **Safety Net takes over some responsibility from shadow redundancy in DAG environments**: hadow redundancy doesn't need to keep another copy of the delivered message in a shadow queue while it waits for the delivered message to replicate to the passive copies of mailbox database. The copy of the delivered message is already stored in Safety Net, so the message can be resubmitted from Safety Net if necessary.
+- **Safety Net takes over some responsibility from shadow redundancy in DAG environments**: Shadow redundancy doesn't need to keep another copy of the delivered message in a shadow queue while it waits for the delivered message to replicate to the passive copies of mailbox database. The copy of the delivered message is already stored in Safety Net, so the message can be resubmitted from Safety Net if necessary.
     
 - **Safety Net tries to guarantee message redundancy**: Safety Net is more than just a best effort for message redundancy, so you can't specify a maximum size limit for Safety Net. You can only specify how long Safety Net stores messages before they're automatically deleted.
     
